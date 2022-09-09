@@ -1,0 +1,105 @@
+
+for _, cc in toolsets('^cc.*') do
+    local cc = cc:inherit {
+        warning_level = 1;
+        warnings_as_errors = true;
+    };
+    cc:all {
+        cc:StaticLibrary '${lib}/harfbuzz_${platform}_${architecture}' {
+            cc:Cxx '${obj}/%1' {
+                'graph/gsubgpos-context.cc';
+                'hb-icu.cc';
+                'hb-subset-cff1.cc';
+                'hb-face.cc';
+                'hb-ot-cff2-table.cc';
+                'hb-subset-input.cc';
+                'hb-ot-shaper-use.cc';
+                'hb-ot-tag.cc';
+                'hb-shaper.cc';
+                'hb-ot-math.cc';
+                'hb-set.cc';
+                'hb-glib.cc';
+                'hb-gdi.cc';
+                'hb-font.cc';
+                'hb-subset.cc';
+                'hb-subset-repacker.cc';
+                'hb-buffer-serialize.cc';
+                'hb-shape.cc';
+                'hb-ot-shape-normalize.cc';
+                'hb-ot-shape.cc';
+                'hb-ot-var.cc';
+                'hb-number.cc';
+                'hb-subset-cff2.cc';
+                'hb-uniscribe.cc';
+                'hb-ot-layout.cc';
+                'hb-ot-metrics.cc';
+                'hb-ot-color.cc';
+                'hb-subset-cff-common.cc';
+                'hb-ot-shaper-indic.cc';
+                'hb-ot-cff1-table.cc';
+                'hb-aat-layout.cc';
+                'hb-draw.cc';
+                'hb-buffer-verify.cc';
+                'hb-ot-shaper-thai.cc';
+                'hb-ot-shaper-vowel-constraints.cc';
+                'hb-coretext.cc';
+                'hb-buffer.cc';
+                'hb-shape-plan.cc';
+                'hb-graphite2.cc';
+                'hb-ot-face.cc';
+                'hb-ot-name.cc';
+                'hb-ot-map.cc';
+                'hb-gobject-structs.cc';
+                'hb-subset-plan.cc';
+                'hb-directwrite.cc';
+                'hb-ft.cc';
+                'hb-static.cc';
+                'hb-ot-shaper-syllabic.cc';
+                'hb-style.cc';
+                'hb-blob.cc';
+                'hb-ot-shaper-indic-table.cc';
+                'hb-ot-shaper-hangul.cc';
+                'hb-ot-shape-fallback.cc';
+                'hb-ot-shaper-khmer.cc';
+                'hb-ot-shaper-arabic.cc';
+                'hb-aat-map.cc';
+                'hb-ot-font.cc';
+                'hb-ot-shaper-default.cc';
+                'hb-ot-shaper-hebrew.cc';
+                'hb-ot-shaper-myanmar.cc';
+                'hb-common.cc';
+                'hb-map.cc';
+                'hb-ucd.cc';
+                'hb-ot-meta.cc';
+                'hb-fallback-shape.cc';
+                'hb-unicode.cc';
+            };
+
+            'test.cc';
+            'main.cc';
+            'failing-alloc.c';            
+        };
+    };
+end
+
+-- 'graph/test-classdef-graph.cc';
+-- 'test-gpos-size-params.cc';
+-- 'test-map.cc';
+-- 'test-algs.cc';
+-- 'test-array.cc';
+-- 'test-buffer-serialize.cc';
+-- 'test-ot-name.cc';
+-- 'test-ot-meta.cc';
+-- 'test-gsub-would-substitute.cc';
+-- 'test-iter.cc';
+-- 'test-unicode-ranges.cc';
+-- 'test-use-table.cc';
+-- 'test-machinery.cc';
+-- 'test-priority-queue.cc';
+-- 'test-repacker.cc';
+-- 'test-vector.cc';
+-- 'test-number.cc';
+-- 'test-set.cc';
+-- 'test-ot-glyphname.cc';
+-- 'test-bimap.cc';
+-- 'test-serialize.cc';
